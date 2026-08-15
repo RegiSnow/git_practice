@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Regius Goodlive | Healthcare Executive & Founder</title>
+
+    <meta name="description"
+          content="Professional portfolio of Regius Goodlive — Founder & CEO of Nivexia Integrated Healthcare Ltd., Registered Nurse, Healthcare Entrepreneur, HSE Professional, Data Analytics and DevOps Professional.">
+
+    <meta name="author" content="Regius Goodlive">
+
+    <style>
+        :root {
+            --primary: #0b3d3d;
+            --primary-light: #125858;
+            --accent: #c89b3c;
+            --dark: #101717;
+            --text: #263333;
+            --muted: #687777;
+            --light: #f5f8f7;
+            --white: #ffffff;
+            --border: #dce5e3;
+            --max-width: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 35px rgba(0,0,0,.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: .5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: .88rem;
+            color: var(--text);
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 0 90px;
+            background:
+                linear-gradient(135deg,
+                #f5f8f7 0%,
+                #ffffff 55%,
+                #eef5f3 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: .78rem;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.8rem);
+            line-height: .98;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 720px;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 1px solid var(--primary);
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-card {
+            background: var(--primary);
+            color: white;
+            padding: 42px;
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+        }
+
+        .hero-card p {
+            color: #dce9e7;
+        }
+
+        .quote {
+            border-left: 3px solid var(--accent);
+            padding-left: 18px;
+            margin-top: 25px;
+            font-style: italic;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--light);
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin-bottom: 55px;
+        }
+
+        .section-number {
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 5px 20px rgba(0,0,0,.03);
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        .card li {
+            margin-bottom: 7px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #edf4f2;
+            color: var(--primary);
+            padding: 7px 12px;
+            border-radius: 100px;
+            font-size: .82rem;
+            font-weight: 600;
+        }
+
+        /* =========================
+           PROFILE
+        ========================== */
+
+        .profile-text {
+            font-size: 1.08rem;
+            color: var(--muted);
+        }
+
+        .profile-text p {
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           TIMELINE
+        ========================== */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 55px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: .85rem;
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           CASE STUDIES
+        ========================== */
+
+        .case-study {
+            margin-bottom: 30px;
+        }
+
+        .case-study .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e4ecea;
+        }
+
+        .case-study h3 {
+            margin-top: -15px;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .case-meta span {
+            font-size: .8rem;
+            background: var(--light);
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skill {
+            margin-bottom: 22px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-weight: 700;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e6eceb;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--primary);
+        }
+
+        /* =========================
+           ACHIEVEMENT
+        ========================== */
+
+        .achievement {
+            text-align: center;
+            padding: 40px 25px;
+        }
+
+        .achievement strong {
+            display: block;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           QUOTE
+        ========================== */
+
+        .large-quote {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .large-quote p {
+            font-size: clamp(1.6rem, 4vw, 2.6rem);
+            line-height: 1.3;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        footer .grid {
+            margin-bottom: 50px;
+        }
+
+        footer h3 {
+            color: white;
+        }
+
+        footer p,
+        footer li {
+            color: #aebbbb;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid #293333;
+            padding-top: 25px;
+            color: #879393;
+            font-size: .85rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 76px;
+                right: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 25px;
+                display: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-grid,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+
+<header>
+    <nav class="container">
+
+        <a href="#home" class="logo">
+            REGIUS<span>.</span>
+        </a>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#story">My Story</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- ============================================================
+     1. COVER & EXECUTIVE PROFILE
+============================================================ -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                Executive Portfolio
+            </div>
+
+            <h1>
+                Regius <span>Goodlive</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Founder & CEO of Nivexia Integrated Healthcare Ltd.
+                <br>
+                Registered Nurse • Healthcare Executive • Entrepreneur
+                • HSE Professional • Data Analytics • DevOps & Cloud
+            </p>
+
+            <p class="hero-subtitle">
+                Building connected healthcare systems that integrate
+                people, clinical services, technology, governance and
+                business into a continuous patient-centered ecosystem.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#about" class="btn btn-primary">
+                    Explore My Portfolio
+                </a>
+
+                <a href="#projects" class="btn btn-outline">
+                    View My Work
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <h3>Executive Profile</h3>
+
+            <p>
+                Regius Goodlive is a healthcare executive, registered
+                nurse and entrepreneur building at the intersection of
+                healthcare delivery, technology, business strategy and
+                systems transformation.
+            </p>
+
+            <p style="margin-top:20px;">
+                As Founder and CEO of Nivexia Integrated Healthcare Ltd.,
+                he is developing an integrated healthcare ecosystem
+                designed to connect patients, healthcare professionals,
+                institutions and technology across the continuum of care.
+            </p>
+
+            <div class="quote">
+                Healthcare should not operate as isolated services.
+                It should function as one connected ecosystem centered
+                around the patient.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     2. MY STORY
+============================================================ -->
+
+<section id="story">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">02 — MY STORY</div>
+
+            <h2>
+                From Nursing to Building Integrated Healthcare
+            </h2>
+
+            <p class="section-intro">
+                A professional journey shaped by clinical experience,
+                systems thinking, entrepreneurship and technology.
+            </p>
+
+        </div>
+
+        <div class="profile-text">
+
+            <p>
+                My professional journey began in nursing. Clinical
+                practice gave me a firsthand understanding of the
+                responsibility involved in caring for people during
+                vulnerable moments of their lives.
+            </p>
+
+            <p>
+                Nursing also exposed me to the realities of healthcare
+                systems. I saw how communication gaps, fragmented
+                workflows, limited resources, administrative inefficiencies
+                and disconnected services could affect both healthcare
+                professionals and patients.
+            </p>
+
+            <p>
+                Those experiences gradually changed the questions I was
+                asking. Instead of only asking how I could provide better
+                care to individual patients, I began asking how healthcare
+                organizations could be designed to consistently enable
+                better care.
+            </p>
+
+            <p>
+                This became the foundation of my systems-thinking approach.
+                I became increasingly interested in clinical governance,
+                quality management, healthcare operations, organizational
+                strategy and technology.
+            </p>
+
+            <p>
+                This thinking ultimately led to the creation of Nivexia
+                Integrated Healthcare Ltd., an organization built around
+                the idea that healthcare should be coordinated rather than
+                fragmented.
+            </p>
+
+            <p>
+                My technology journey developed from the same philosophy.
+                As healthcare becomes increasingly dependent on digital
+                infrastructure, cloud platforms, automation and data,
+                I began expanding my expertise into DevOps, cloud
+                engineering and healthcare analytics.
+            </p>
+
+            <p>
+                I am therefore not pursuing technology as a departure
+                from healthcare. I am developing technology expertise
+                because I believe future healthcare leaders must understand
+                both the systems delivering care and the infrastructure
+                powering them.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     3. PROFESSIONAL PHILOSOPHY
+============================================================ -->
+
+<section id="philosophy">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">03 — PHILOSOPHY</div>
+
+            <h2>
+                Professional Philosophy & Leadership Principles
+            </h2>
+
+            <p class="section-intro">
+                The principles that guide how I lead people, build
+                organizations and approach complex problems.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Patient First</h3>
+                <p>
+                    Every healthcare system should ultimately be evaluated
+                    by the value it creates for the patient.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Systems Thinking</h3>
+                <p>
+                    Sustainable healthcare improvement requires
+                    understanding how people, processes, technology,
+                    finance and governance interact.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Leadership Through Service</h3>
+                <p>
+                    Leadership is responsibility. I believe leaders should
+                    create environments where teams can perform, grow and
+                    contribute meaningfully.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Continuous Learning</h3>
+                <p>
+                    Healthcare and technology evolve continuously.
+                    Remaining relevant requires curiosity, adaptability
+                    and deliberate learning.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Responsible Innovation</h3>
+                <p>
+                    Innovation should solve real problems, strengthen
+                    outcomes and remain practical within the environment
+                    where it is deployed.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Long-Term Impact</h3>
+                <p>
+                    I focus on building systems and organizations that
+                    can continue creating value beyond individual projects
+                    or short-term initiatives.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     4. CAREER JOURNEY
+============================================================ -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">04 — CAREER JOURNEY</div>
+
+            <h2>
+                Professional Progression
+            </h2>
+
+            <p class="section-intro">
+                The evolution from clinical practice to healthcare
+                leadership, entrepreneurship and technology.
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    EARLY PROFESSIONAL FOUNDATION
+                </div>
+
+                <h3>
+                    Nursing & Clinical Practice
+                </h3>
+
+                <p>
+                    Developed a professional foundation in patient care,
+                    clinical decision-making, care coordination,
+                    documentation, patient safety and multidisciplinary
+                    collaboration.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    PROFESSIONAL DEVELOPMENT
+                </div>
+
+                <h3>
+                    Healthcare Leadership & HSE
+                </h3>
+
+                <p>
+                    Expanded professional responsibilities and interests
+                    into healthcare administration, health and safety,
+                    risk management, quality improvement and organizational
+                    systems.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    ENTREPRENEURSHIP
+                </div>
+
+                <h3>
+                    Founder & CEO — Nivexia
+                </h3>
+
+                <p>
+                    Founded Nivexia Integrated Healthcare Ltd. and began
+                    designing an integrated healthcare business model
+                    connecting clinical services, home care, diagnostics,
+                    pharmacy, dialysis, wellness and digital health.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    DIGITAL TRANSFORMATION
+                </div>
+
+                <h3>
+                    Healthcare Technology & Data
+                </h3>
+
+                <p>
+                    Began developing expertise in healthcare data
+                    analytics, digital health, information systems and
+                    technology-enabled healthcare transformation.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    CURRENT DEVELOPMENT
+                </div>
+
+                <h3>
+                    DevOps, Cloud & Platform Engineering
+                </h3>
+
+                <p>
+                    Building technical capabilities in Linux, Git,
+                    cloud infrastructure, automation, CI/CD, containers,
+                    networking and modern platform engineering.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     5. EXECUTIVE EXPERIENCE
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">05 — EXECUTIVE EXPERIENCE</div>
+
+            <h2>
+                Founder & Chief Executive Officer
+            </h2>
+
+            <p class="section-intro">
+                Nivexia Integrated Healthcare Ltd.
+            </p>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card">
+
+                <h3>Strategic Leadership</h3>
+
+                <ul>
+                    <li>Corporate vision and strategy</li>
+                    <li>Healthcare business model development</li>
+                    <li>Service-line development</li>
+                    <li>Market positioning</li>
+                    <li>Partnership development</li>
+                    <li>Investor readiness</li>
+                    <li>Organizational planning</li>
+                </ul>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Operational Leadership</h3>
+
+                <ul>
+                    <li>Healthcare workflows</li>
+                    <li>Clinical governance</li>
+                    <li>Quality management</li>
+                    <li>Risk management</li>
+                    <li>Human resource structures</li>
+                    <li>Policy architecture</li>
+                    <li>Compliance planning</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     6. HEALTHCARE LEADERSHIP
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">06 — HEALTHCARE LEADERSHIP</div>
+
+            <h2>
+                Healthcare Leadership Portfolio
+            </h2>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Clinical Governance</h3>
+                <p>
+                    Designing structures for clinical accountability,
+                    patient safety, documentation, audit and quality
+                    improvement.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Healthcare Operations</h3>
+                <p>
+                    Developing workflows and operating models that
+                    coordinate people, services and resources.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Quality & Safety</h3>
+                <p>
+                    Integrating incident management, root-cause analysis,
+                    CAPA, clinical audit and safety monitoring.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Care Coordination</h3>
+                <p>
+                    Designing patient journeys that connect healthcare
+                    services rather than treating each encounter as an
+                    isolated event.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Healthcare Strategy</h3>
+                <p>
+                    Translating healthcare problems into sustainable
+                    operational and commercial strategies.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Healthcare Innovation</h3>
+                <p>
+                    Exploring technology and new business models capable
+                    of improving access and continuity of care.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     7. BUSINESS & ENTREPRENEURSHIP
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">07 — ENTREPRENEURSHIP</div>
+
+            <h2>
+                Business & Entrepreneurship Portfolio
+            </h2>
+
+            <p class="section-intro">
+                Building healthcare as both a social-impact system and
+                a sustainable enterprise.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Business Model Design</h3>
+                <p>
+                    Subscription services, service-based billing,
+                    corporate retainership and insurance partnerships.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Market Development</h3>
+                <p>
+                    Identifying underserved healthcare needs and designing
+                    services around patient and institutional demand.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Strategic Partnerships</h3>
+                <p>
+                    Building relationships with healthcare providers,
+                    HMOs, institutions and strategic stakeholders.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Investor Readiness</h3>
+                <p>
+                    Developing the strategy, governance and operational
+                    foundations necessary for scalable growth.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Service Design</h3>
+                <p>
+                    Translating healthcare needs into structured,
+                    commercially viable service lines.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Organizational Design</h3>
+                <p>
+                    Building structures that support accountability,
+                    scalability and operational consistency.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     8. NIVOXIA
+============================================================ -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">08 — NIVOXIA</div>
+
+            <h2>
+                Nivexia Integrated Healthcare Ltd.
+            </h2>
+
+            <p class="section-intro">
+                One patient. One journey. One connected healthcare system.
+            </p>
+
+        </div>
+
+        <div class="card" style="margin-bottom:30px;">
+
+            <h3>Company Vision</h3>
+
+            <p>
+                To build Africa's leading lifelong care system, where
+                every individual is continuously supported across every
+                stage of health.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Nivexia HomeCare</h3>
+                <p>
+                    Professional healthcare delivered within the home,
+                    supporting patients beyond traditional facility-based
+                    care.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Nivexia Diagnostics</h3>
+                <p>
+                    Diagnostic laboratory services integrated into a
+                    broader patient-care ecosystem.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Nivexia Pharmacy</h3>
+                <p>
+                    Pharmacy services designed to complement coordinated
+                    clinical care and medication management.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Nivexia Dialysis</h3>
+                <p>
+                    Specialized renal care integrated into the broader
+                    lifelong-care model.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Nivexia Wellness</h3>
+                <p>
+                    Wellness, fitness, physiotherapy and preventive
+                    health services.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Nivexia Care Card</h3>
+                <p>
+                    A membership-oriented healthcare access model designed
+                    to strengthen continuity and affordability.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     9. MAJOR PROJECTS
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">09 — MAJOR PROJECTS</div>
+
+            <h2>
+                Selected Projects & Systems Designed
+            </h2>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card case-study">
+
+                <div class="number">01</div>
+
+                <h3>
+                    Unified Master Healthcare Enterprise Framework
+                </h3>
+
+                <p>
+                    Designed an enterprise governance architecture
+                    integrating clinical, financial, HR, quality,
+                    risk, compliance, digital infrastructure and
+                    executive oversight.
+                </p>
+
+                <div class="tag-list">
+                    <span class="tag">Governance</span>
+                    <span class="tag">Healthcare</span>
+                    <span class="tag">Enterprise Architecture</span>
+                </div>
+
+            </div>
+
+
+            <div class="card case-study">
+
+                <div class="number">02</div>
+
+                <h3>
+                    Integrated Patient Journey
+                </h3>
+
+                <p>
+                    Designed the patient experience from registration
+                    through care coordination, diagnostics, pharmacy,
+                    follow-up and ongoing support.
+                </p>
+
+                <div class="tag-list">
+                    <span class="tag">Patient Experience</span>
+                    <span class="tag">Digital Health</span>
+                    <span class="tag">Care Coordination</span>
+                </div>
+
+            </div>
+
+
+            <div class="card case-study">
+
+                <div class="number">03</div>
+
+                <h3>
+                    Healthcare Workforce Workflows
+                </h3>
+
+                <p>
+                    Developed structured workflows for nurses, doctors,
+                    laboratory personnel, pharmacy teams, administrators
+                    and home-care coordinators.
+                </p>
+
+                <div class="tag-list">
+                    <span class="tag">Operations</span>
+                    <span class="tag">HR</span>
+                    <span class="tag">Clinical Workflow</span>
+                </div>
+
+            </div>
+
+
+            <div class="card case-study">
+
+                <div class="number">04</div>
+
+                <h3>
+                    Healthcare Quality Management Architecture
+                </h3>
+
+                <p>
+                    Designed structures covering incident management,
+                    RCA, CAPA, clinical audit, infection prevention,
+                    medication safety and emergency preparedness.
+                </p>
+
+                <div class="tag-list">
+                    <span class="tag">QMS</span>
+                    <span class="tag">Patient Safety</span>
+                    <span class="tag">Compliance</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     10. HEALTHCARE GOVERNANCE
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">10 — GOVERNANCE</div>
+
+            <h2>
+                Healthcare Systems & Enterprise Governance
+            </h2>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Clinical Governance</h3>
+                <ul>
+                    <li>Clinical documentation</li>
+                    <li>Patient safety</li>
+                    <li>Clinical audit</li>
+                    <li>Medication management</li>
+                    <li>Quality monitoring</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Financial Governance</h3>
+                <ul>
+                    <li>Revenue management</li>
+                    <li>Subscription billing</li>
+                    <li>Service billing</li>
+                    <li>Claims processing</li>
+                    <li>Corporate retainership</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>HR Governance</h3>
+                <ul>
+                    <li>Recruitment</li>
+                    <li>Onboarding</li>
+                    <li>Workforce management</li>
+                    <li>Performance management</li>
+                    <li>Training</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Quality Management</h3>
+                <ul>
+                    <li>Incident management</li>
+                    <li>RCA</li>
+                    <li>CAPA</li>
+                    <li>Clinical audit</li>
+                    <li>Safety surveillance</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Enterprise Risk</h3>
+                <ul>
+                    <li>Risk identification</li>
+                    <li>Risk assessment</li>
+                    <li>Risk mitigation</li>
+                    <li>Emergency preparedness</li>
+                    <li>Business continuity</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Digital Governance</h3>
+                <ul>
+                    <li>Data classification</li>
+                    <li>Role-based access</li>
+                    <li>Encryption</li>
+                    <li>Disaster recovery</li>
+                    <li>RTO/RPO planning</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     11. HEALTHCARE TECHNOLOGY
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">11 — HEALTHCARE TECHNOLOGY</div>
+
+            <h2>
+                Digital Health & Technology Transformation
+            </h2>
+
+            <p class="section-intro">
+                Connecting healthcare operations with modern digital
+                infrastructure.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Electronic Medical Records</h3>
+                <p>
+                    Designing digital clinical documentation and
+                    patient-record workflows.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Healthcare Interoperability</h3>
+                <p>
+                    Exploring how healthcare systems can exchange
+                    information and support continuity of care.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Digital Patient Journey</h3>
+                <p>
+                    Mapping registration, consultation, diagnostics,
+                    pharmacy, treatment and follow-up into one experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Data Governance</h3>
+                <p>
+                    Developing principles for healthcare data access,
+                    classification, security and responsible use.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Healthcare Automation</h3>
+                <p>
+                    Identifying workflows that can be improved through
+                    digital automation and system integration.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>AI in Healthcare</h3>
+                <p>
+                    Exploring responsible applications of artificial
+                    intelligence for clinical and operational decision
+                    support.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     12. DEVOPS
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">12 — DEVOPS</div>
+
+            <h2>
+                DevOps & Cloud Engineering Journey
+            </h2>
+
+            <p class="section-intro">
+                Building the technical foundation required to create
+                reliable, scalable healthcare platforms.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Linux</h3>
+                <p>
+                    Developing practical Linux administration and
+                    command-line skills.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Git & GitHub</h3>
+                <p>
+                    Version control, repository management, branching,
+                    collaboration and software delivery workflows.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Networking</h3>
+                <p>
+                    Building knowledge of IP addressing, subnets, DNS,
+                    HTTP/HTTPS, TCP/UDP, ports, routers, NAT, firewalls
+                    and VPNs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Cloud Infrastructure</h3>
+                <p>
+                    Developing knowledge of VPCs, public/private
+                    subnets, security groups, load balancers and
+                    cloud architecture.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>CI/CD</h3>
+                <p>
+                    Learning automated software build, testing and
+                    deployment pipelines.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Containers</h3>
+                <p>
+                    Developing knowledge of Docker, containerized
+                    applications and orchestration concepts.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     13. DATA ANALYTICS
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">13 — DATA ANALYTICS</div>
+
+            <h2>
+                Healthcare Data & Analytics
+            </h2>
+
+            <p class="section-intro">
+                Turning healthcare information into actionable insight.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Data Analysis</h3>
+                <p>
+                    Learning to clean, analyze and interpret structured
+                    datasets to support business and healthcare decisions.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>SQL</h3>
+                <p>
+                    Developing database querying and healthcare data
+                    extraction capabilities.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Python</h3>
+                <p>
+                    Applying Python to analytical workflows, automation
+                    and data processing.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Business Intelligence</h3>
+                <p>
+                    Designing dashboards and performance metrics that
+                    help leaders understand organizational performance.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Healthcare Analytics</h3>
+                <p>
+                    Exploring the use of data to improve clinical,
+                    operational and strategic decisions.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Decision Intelligence</h3>
+                <p>
+                    Connecting data, context and leadership decisions
+                    to improve healthcare performance.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     14. RESEARCH & INNOVATION
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">14 — RESEARCH & INNOVATION</div>
+
+            <h2>
+                Research, Innovation & Thought Leadership
+            </h2>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card">
+
+                <h3>
+                    Areas of Intellectual Interest
+                </h3>
+
+                <ul>
+                    <li>Healthcare systems transformation</li>
+                    <li>Digital health</li>
+                    <li>Artificial intelligence in healthcare</li>
+                    <li>Healthcare analytics</li>
+                    <li>Primary healthcare reform</li>
+                    <li>Emergency care improvement</li>
+                    <li>Healthcare financing</li>
+                    <li>Healthcare interoperability</li>
+                    <li>Patient safety</li>
+                    <li>Healthcare entrepreneurship</li>
+                </ul>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Emerging Questions
+                </h3>
+
+                <p>
+                    How can technology improve healthcare access without
+                    increasing inequality?
+                </p>
+
+                <br>
+
+                <p>
+                    How can African healthcare organizations build
+                    financially sustainable digital infrastructure?
+                </p>
+
+                <br>
+
+                <p>
+                    How can healthcare data be transformed into practical
+                    intelligence for clinicians, administrators and
+                    policymakers?
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     15. AWARDS & RECOGNITION
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">15 — RECOGNITION</div>
+
+            <h2>
+                Awards & Professional Recognition
+            </h2>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card achievement">
+
+                <strong>TOP 10</strong>
+
+                <h3>
+                    Aster Guardians Global Nursing Award
+                </h3>
+
+                <p>
+                    Recognized among the Top 10 finalists of an
+                    international nursing recognition program.
+                </p>
+
+            </div>
+
+            <div class="card achievement">
+
+                <strong>RECOGNIZED</strong>
+
+                <h3>
+                    Directorate of Nursing Services
+                </h3>
+
+                <p>
+                    Recognized by the Directorate of Nursing Services,
+                    Lagos State Ministry of Health.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     16. EDUCATION
+============================================================ -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">16 — EDUCATION</div>
+
+            <h2>
+                Education, Credentials & Continuous Development
+            </h2>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card">
+
+                <h3>
+                    Bachelor of Science in Nursing & Midwifery
+                </h3>
+
+                <p>
+                    Professional nursing education providing a foundation
+                    in clinical practice, patient care, community health,
+                    nursing leadership and healthcare delivery.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Health, Safety & Environment
+                </h3>
+
+                <p>
+                    Professional HSE development covering occupational
+                    health, workplace safety, risk assessment, incident
+                    management and safety systems.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Data Analytics & Data Science
+                </h3>
+
+                <p>
+                    Ongoing development in data analysis, databases,
+                    programming, visualization and healthcare analytics.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    DevOps & Cloud Engineering
+                </h3>
+
+                <p>
+                    Ongoing technical development in Linux, networking,
+                    Git, cloud infrastructure, automation, CI/CD and
+                    platform engineering.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     17. CORE SKILLS
+============================================================ -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">17 — CORE COMPETENCIES</div>
+
+            <h2>
+                Skills & Areas of Specialization
+            </h2>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Healthcare</h3>
+
+                <div class="tag-list">
+
+                    <span class="tag">Clinical Leadership</span>
+                    <span class="tag">Patient Safety</span>
+                    <span class="tag">Care Coordination</span>
+                    <span class="tag">Healthcare Operations</span>
+                    <span class="tag">Clinical Governance</span>
+                    <span class="tag">Quality Improvement</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Business</h3>
+
+                <div class="tag-list">
+
+                    <span class="tag">Entrepreneurship</span>
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Business Development</span>
+                    <span class="tag">Partnerships</span>
+                    <span class="tag">Service Design</span>
+                    <span class="tag">Leadership</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Technology</h3>
+
+                <div class="tag-list">
+
+                    <span class="tag">Digital Health</span>
+                    <span class="tag">DevOps</span>
+                    <span class="tag">Cloud</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Networking</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Analytics</h3>
+
+                <div class="tag-list">
+
+                    <span class="tag">Data Analytics</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">BI</span>
+                    <span class="tag">Healthcare Data</span>
+                    <span class="tag">Decision Intelligence</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Safety</h3>
+
+                <div class="tag-list">
+
+                    <span class="tag">HSE</span>
+                    <span class="tag">Risk Management</span>
+                    <span class="tag">Occupational Health</span>
+                    <span class="tag">Emergency Preparedness</span>
+                    <span class="tag">Incident Management</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Executive</h3>
+
+                <div class="tag-list">
+
+                    <span class="tag">Vision</span>
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Governance</span>
+                    <span class="tag">Decision Making</span>
+                    <span class="tag">Organizational Design</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     18. PERSONAL BRAND
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">18 — PERSONAL BRAND</div>
+
+            <h2>
+                What Differentiates Regius Goodlive?
+            </h2>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card">
+
+                <h3>
+                    The Clinician Who Thinks Like a Systems Builder
+                </h3>
+
+                <p>
+                    Clinical experience provides an understanding of
+                    healthcare at the point where systems ultimately
+                    create value: the patient.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    The Entrepreneur Who Understands Healthcare
+                </h3>
+
+                <p>
+                    Nivexia is built from an understanding of both
+                    healthcare needs and the realities of building a
+                    sustainable organization.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    The Executive Learning Technology
+                </h3>
+
+                <p>
+                    Rather than treating technology as a separate field,
+                    technology is being incorporated into the broader
+                    healthcare leadership strategy.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    The African Context Matters
+                </h3>
+
+                <p>
+                    Solutions are evaluated through the realities of
+                    African healthcare infrastructure, financing,
+                    workforce and access.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     19. PROFESSIONAL INTERESTS
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">19 — INTERESTS</div>
+
+            <h2>
+                Professional Interests & Context
+            </h2>
+
+        </div>
+
+        <div class="tag-list">
+
+            <span class="tag">Digital Health</span>
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Healthcare Analytics</span>
+            <span class="tag">Healthcare Entrepreneurship</span>
+            <span class="tag">DevOps</span>
+            <span class="tag">Cloud Computing</span>
+            <span class="tag">Health Systems</span>
+            <span class="tag">Primary Healthcare</span>
+            <span class="tag">Emergency Care</span>
+            <span class="tag">Patient Safety</span>
+            <span class="tag">Occupational Health</span>
+            <span class="tag">Healthcare Policy</span>
+            <span class="tag">Innovation</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Data Science</span>
+            <span class="tag">Enterprise Architecture</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     20. FUTURE VISION
+============================================================ -->
+
+<section id="vision">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">20 — FUTURE VISION</div>
+
+            <h2>
+                Building Africa's Next Generation of Healthcare Systems
+            </h2>
+
+        </div>
+
+        <div class="profile-text">
+
+            <p>
+                My long-term objective is to contribute to the development
+                of healthcare systems across Africa that are accessible,
+                coordinated, financially sustainable and digitally enabled.
+            </p>
+
+            <p>
+                I envision healthcare environments where patient information
+                follows the patient, healthcare professionals have access
+                to meaningful information, organizations operate through
+                strong governance and technology removes unnecessary
+                friction from care delivery.
+            </p>
+
+            <p>
+                I want to contribute to a healthcare future in which
+                artificial intelligence and analytics support clinicians,
+                cloud infrastructure enables scalable healthcare platforms,
+                and digital systems strengthen rather than replace human
+                relationships.
+            </p>
+
+            <p>
+                Nivexia is one expression of this vision. My broader
+                professional goal is to become a leader capable of bringing
+                together clinical knowledge, organizational leadership,
+                entrepreneurship, technology and data to solve complex
+                healthcare problems.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     21. TESTIMONIALS / REFERENCES
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">21 — TESTIMONIALS</div>
+
+            <h2>
+                Professional Recommendations
+            </h2>
+
+            <p class="section-intro">
+                Selected recommendations can be added here as verified
+                references become available.
+            </p>
+
+        </div>
+
+        <div class="grid-2">
+
+            <div class="card">
+
+                <h3>
+                    Professional Reference
+                </h3>
+
+                <p>
+                    “Insert verified recommendation from a senior
+                    healthcare professional, executive, academic or
+                    organizational leader.”
+                </p>
+
+                <br>
+
+                <strong>
+                    — Name, Position
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Leadership Reference
+                </h3>
+
+                <p>
+                    “Insert verified recommendation highlighting
+                    leadership, initiative, collaboration or professional
+                    impact.”
+                </p>
+
+                <br>
+
+                <strong>
+                    — Name, Position
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     22. CONTACT / COLLABORATION
+============================================================ -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">22 — CONTACT</div>
+
+            <h2>
+                Let's Build Something That Matters
+            </h2>
+
+            <p class="section-intro">
+                Open to meaningful conversations around healthcare,
+                technology, entrepreneurship, partnerships, leadership
+                and innovation.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Healthcare Partnerships</h3>
+
+                <p>
+                    Collaboration with healthcare organizations,
+                    hospitals, HMOs, laboratories, pharmacies and
+                    strategic healthcare partners.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Technology & Innovation</h3>
+
+                <p>
+                    Conversations around digital health, healthcare
+                    infrastructure, analytics, AI and technology-enabled
+                    healthcare delivery.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Investment & Strategy</h3>
+
+                <p>
+                    Strategic conversations with investors, advisors,
+                    entrepreneurs and organizations interested in the
+                    future of African healthcare.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     FINAL STATEMENT
+============================================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="large-quote">
+
+            <p>
+                “I am building at the intersection of healthcare,
+                technology and entrepreneurship because the problems
+                facing healthcare require more than one discipline to
+                solve.”
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="grid">
+
+            <div>
+
+                <h3>Regius Goodlive</h3>
+
+                <p>
+                    Founder & CEO<br>
+                    Nivexia Integrated Healthcare Ltd.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Professional Identity</h3>
+
+                <ul>
+                    <li>Registered Nurse</li>
+                    <li>Healthcare Executive</li>
+                    <li>Healthcare Entrepreneur</li>
+                    <li>HSE Professional</li>
+                    <li>Data Analytics</li>
+                    <li>DevOps & Cloud</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Focus Areas</h3>
+
+                <ul>
+                    <li>Integrated Healthcare</li>
+                    <li>Digital Health</li>
+                    <li>Healthcare Analytics</li>
+                    <li>Technology</li>
+                    <li>Healthcare Innovation</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 Regius Goodlive. All rights reserved.
+
+            <br><br>
+
+            This portfolio presents a professional overview of
+            Regius Goodlive's experience, projects, professional
+            interests and ongoing development.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+
+    window.addEventListener("scroll", () => {
+
+        const header = document.querySelector("header");
+
+        if (window.scrollY > 30) {
+
+            header.style.boxShadow =
+                "0 5px 25px rgba(0,0,0,.06)";
+
+        } else {
+
+            header.style.boxShadow = "none";
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

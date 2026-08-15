@@ -1,0 +1,3961 @@
+1. Navbar
+HTML
+<header class="header">
+    <nav class="navbar container" aria-label="Main Navigation">
+
+        <a href="#home" class="logo">
+            <span>&lt;</span>Regius<span>/&gt;</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+            <li><a href="#projects">Projects</a></li>
+
+            <li><a href="#timeline">Experience</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+
+                <button
+                    id="themeToggle"
+                    class="theme-btn"
+                    aria-label="Toggle Theme">
+
+                    🌙
+
+                </button>
+
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+CSS
+/* ==========================
+   NAVBAR
+========================== */
+
+.header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.container{
+
+    width:min(1150px,90%);
+    margin:auto;
+
+}
+
+.navbar{
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    font-size:1.5rem;
+    font-weight:700;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+    align-items:center;
+    gap:2rem;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    position:relative;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0%;
+    height:2px;
+
+    left:0;
+    bottom:-6px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.theme-btn{
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(10px);
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    transform:rotate(25deg);
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    cursor:pointer;
+
+    background:none;
+
+    border:none;
+
+}
+
+.menu-toggle span{
+
+    width:28px;
+    height:3px;
+
+    background:var(--text);
+
+    transition:.3s;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.nav-links{
+
+position:absolute;
+
+top:80px;
+left:0;
+
+width:100%;
+
+background:rgba(18,18,18,.85);
+
+backdrop-filter:blur(18px);
+
+flex-direction:column;
+
+padding:2rem 0;
+
+display:none;
+
+}
+
+.nav-links.active{
+
+display:flex;
+
+}
+
+.menu-toggle{
+
+display:flex;
+
+}
+
+}
+
+
+JavaScript
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        navLinks.classList.contains("active")
+    );
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded",false);
+
+    });
+
+});
+
+
+
+
+
+Hero Section
+This hero is designed to make a strong first impression for recruiters, healthcare executives, and investors. It highlights your transition into DevOps while reinforcing your healthcare leadership and entrepreneurship.
+
+HTML
+<section id="home" class="hero">
+
+    <div class="hero-bg">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="grid"></span>
+    </div>
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <p class="hero-tag">
+                👋 Hello, I'm
+            </p>
+
+            <h1>
+                Regius Goodlive
+            </h1>
+
+            <h2 id="typing"></h2>
+
+            <p class="hero-description">
+
+                Founder of Nivexia Integrated Healthcare Ltd. Passionate about
+                building scalable healthcare systems while transitioning into
+                Cloud Engineering, DevOps, and Software Engineering.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="#" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+                <a href="#" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="glass-card">
+
+                <img
+                    src="images/profile.png"
+                    alt="Regius Goodlive"
+                >
+
+                <div class="floating-icon cloud">
+                    ☁️
+                </div>
+
+                <div class="floating-icon docker">
+                    🐳
+                </div>
+
+                <div class="floating-icon kubernetes">
+                    ⚙️
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll Down">
+
+        <span></span>
+
+    </a>
+
+</section>
+
+
+
+
+CSS
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+}
+
+.blob{
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.35;
+
+}
+
+.blob-1{
+
+    background:#4F8EF7;
+
+    top:-120px;
+
+    left:-100px;
+
+}
+
+.blob-2{
+
+    background:#7C3AED;
+
+    right:-150px;
+
+    bottom:-120px;
+
+}
+
+.grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+}
+
+.hero-container{
+
+    display:grid;
+
+    grid-template-columns:1.2fr 1fr;
+
+    align-items:center;
+
+    gap:4rem;
+
+}
+
+.hero-tag{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin-bottom:1rem;
+
+}
+
+.hero h2{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    min-height:60px;
+
+}
+
+.hero-description{
+
+    margin:2rem 0;
+
+    max-width:600px;
+
+    line-height:1.8;
+
+    color:var(--text-light);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.btn{
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(79,142,247,.35);
+
+}
+
+.btn-secondary{
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    color:var(--text);
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.social-links{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.social-links a{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.3s;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.glass-card{
+
+    position:relative;
+
+    padding:20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+}
+
+.glass-card img{
+
+    width:100%;
+
+    border-radius:20px;
+
+}
+
+.floating-icon{
+
+    position:absolute;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    animation:float 4s ease-in-out infinite;
+
+    font-size:1.6rem;
+
+}
+
+.cloud{
+
+    top:-25px;
+
+    left:-20px;
+
+}
+
+.docker{
+
+    right:-20px;
+
+    top:90px;
+
+}
+
+.kubernetes{
+
+    bottom:-25px;
+
+    left:40%;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.scroll-down span{
+
+    display:block;
+
+    width:24px;
+
+    height:40px;
+
+    border:2px solid var(--text);
+
+    border-radius:20px;
+
+    position:relative;
+
+}
+
+.scroll-down span::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:5px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    left:50%;
+
+    top:6px;
+
+    transform:translateX(-50%);
+
+    animation:scroll 2s infinite;
+
+}
+
+@keyframes scroll{
+
+0%{
+
+opacity:0;
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translate(-50%,15px);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-description{
+
+margin:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.social-links{
+
+justify-content:center;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+}
+
+JavaScript
+/* ==========================
+   TYPING ANIMATION
+========================== */
+
+const titles = [
+
+"Founder & CEO",
+
+"DevOps Engineer",
+
+"Cloud Engineer",
+
+"Software Engineer",
+
+"Healthcare Innovator"
+
+];
+
+let titleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typing = document.getElementById("typing");
+
+function typeEffect(){
+
+    const current = titles[titleIndex];
+
+    if(!deleting){
+
+        typing.textContent = current.substring(0,charIndex++);
+
+        if(charIndex > current.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1500);
+
+            return;
+
+        }
+
+    }else{
+
+        typing.textContent = current.substring(0,charIndex--);
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            titleIndex = (titleIndex + 1) % titles.length;
+
+        }
+
+    }
+
+    setTimeout(typeEffect,deleting ? 50 : 90);
+
+}
+
+typeEffect();
+
+
+About Section
+This section is designed to tell your story while positioning you as a healthcare entrepreneur transitioning into cloud engineering and DevOps. It uses a modern two-column layout with animated statistics and glassmorphism cards.
+
+HTML
+<section id="about" class="about section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+            <span class="section-tag">About Me</span>
+
+            <h2>Building Technology That Improves Lives</h2>
+
+            <p>
+                I combine healthcare leadership, entrepreneurship,
+                cloud technologies, and software engineering to create
+                scalable systems that solve real-world problems.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <!-- Left -->
+
+            <div class="about-image reveal">
+
+                <div class="about-card">
+
+                    <img src="images/profile.png"
+                        alt="Regius Goodlive">
+
+                    <div class="experience-badge">
+
+                        <h3>5+</h3>
+
+                        <span>
+                            Years of Leadership
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="about-content reveal">
+
+                <h3>
+                    Founder, Healthcare Professional &
+                    Future DevOps Engineer
+                </h3>
+
+                <p>
+
+                    I'm Regius Goodlive, Founder & CEO of
+                    Nivexia Integrated Healthcare Ltd.
+
+                    My mission is to transform healthcare
+                    delivery through technology, cloud
+                    infrastructure, automation, and data-driven
+                    decision making.
+
+                </p>
+
+                <p>
+
+                    My background in Nursing, Healthcare
+                    Administration, and Entrepreneurship allows
+                    me to understand problems from both the
+                    clinical and technical perspectives.
+
+                    Today, I'm expanding my expertise into
+                    DevOps Engineering, Cloud Computing,
+                    Kubernetes, Docker, CI/CD, Infrastructure
+                    as Code, and Software Engineering.
+
+                </p>
+
+                <div class="about-stats">
+
+                    <div class="stat glass">
+
+                        <h3 data-target="15">0</h3>
+
+                        <span>
+                            Healthcare Projects
+                        </span>
+
+                    </div>
+
+                    <div class="stat glass">
+
+                        <h3 data-target="8">0</h3>
+
+                        <span>
+                            Healthcare Services
+                        </span>
+
+                    </div>
+
+                    <div class="stat glass">
+
+                        <h3 data-target="20">0</h3>
+
+                        <span>
+                            Technical Skills
+                        </span>
+
+                    </div>
+
+                    <div class="stat glass">
+
+                        <h3 data-target="100">0</h3>
+
+                        <span>
+                            Commitment
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="values-grid">
+
+            <div class="value-card reveal">
+
+                <div class="icon">🚀</div>
+
+                <h3>Innovation</h3>
+
+                <p>
+
+                    Building modern digital healthcare
+                    infrastructure powered by cloud technologies.
+
+                </p>
+
+            </div>
+
+            <div class="value-card reveal">
+
+                <div class="icon">🛡️</div>
+
+                <h3>Reliability</h3>
+
+                <p>
+
+                    Designing secure, scalable and resilient
+                    systems with DevOps best practices.
+
+                </p>
+
+            </div>
+
+            <div class="value-card reveal">
+
+                <div class="icon">❤️</div>
+
+                <h3>Healthcare</h3>
+
+                <p>
+
+                    Technology should improve patient care,
+                    accessibility and operational excellence.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+CSS
+/*=========================
+    ABOUT
+==========================*/
+
+.section{
+
+    padding:120px 0;
+
+}
+
+.section-header{
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 80px;
+
+}
+
+.section-tag{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+.section-header h2{
+
+    margin:20px 0;
+
+    font-size:2.7rem;
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1.3fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:25px;
+
+}
+
+.about-card img{
+
+    width:100%;
+
+    border-radius:25px;
+
+}
+
+.experience-badge{
+
+    position:absolute;
+
+    right:-20px;
+
+    bottom:25px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.experience-badge h3{
+
+    font-size:2rem;
+
+}
+
+.about-content h3{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+}
+
+.about-content p{
+
+    margin-bottom:20px;
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+.about-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-top:40px;
+
+}
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.glass:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat h3{
+
+    color:var(--primary);
+
+    font-size:2.4rem;
+
+}
+
+.values-grid{
+
+    margin-top:90px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.value-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.35s;
+
+}
+
+.value-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    background:rgba(79,142,247,.15);
+
+    margin-bottom:20px;
+
+}
+
+.value-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.value-card p{
+
+    line-height:1.7;
+
+    color:var(--text-light);
+
+}
+
+@media(max-width:900px){
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.values-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.about-stats{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+JavaScript
+/*=========================
+    REVEAL ANIMATION
+==========================*/
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+});
+
+},{threshold:.15});
+
+reveals.forEach(section=>observer.observe(section));
+
+/*=========================
+    COUNTER
+==========================*/
+
+const counters = document.querySelectorAll("[data-target]");
+
+const counterObserver = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(!entry.isIntersecting) return;
+
+const counter = entry.target;
+
+const target = +counter.dataset.target;
+
+let value = 0;
+
+const speed = target/80;
+
+const update = ()=>{
+
+value += speed;
+
+if(value < target){
+
+counter.textContent=Math.ceil(value);
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.textContent=target+"+";
+
+}
+
+};
+
+update();
+
+counterObserver.unobserve(counter);
+
+});
+
+});
+
+counters.forEach(counter=>counterObserver.observe(counter));
+
+
+Add these global animation styles
+.reveal{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+<section id="skills" class="skills section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">
+                My Skills
+            </span>
+
+            <h2>
+                Technologies & Expertise
+            </h2>
+
+            <p>
+
+                Combining healthcare leadership with modern cloud,
+                DevOps, software engineering, and data technologies.
+
+            </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <!-- Cloud -->
+
+            <article class="skill-card reveal">
+
+                <div class="skill-icon">
+                    ☁️
+                </div>
+
+                <h3>Cloud Engineering</h3>
+
+                <div class="skill-list">
+
+                    <div class="skill">
+
+                        <span>AWS</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="80"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Microsoft Azure</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="75"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Linux</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- DevOps -->
+
+            <article class="skill-card reveal">
+
+                <div class="skill-icon">
+                    ⚙️
+                </div>
+
+                <h3>DevOps</h3>
+
+                <div class="skill-list">
+
+                    <div class="skill">
+
+                        <span>Docker</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Kubernetes</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="75"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>GitHub Actions</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="85"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Terraform</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="70"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Programming -->
+
+            <article class="skill-card reveal">
+
+                <div class="skill-icon">
+                    💻
+                </div>
+
+                <h3>Programming</h3>
+
+                <div class="skill-list">
+
+                    <div class="skill">
+
+                        <span>JavaScript</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Python</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="88"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>HTML/CSS</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="95"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Healthcare -->
+
+            <article class="skill-card reveal">
+
+                <div class="skill-icon">
+                    ❤️
+                </div>
+
+                <h3>Healthcare</h3>
+
+                <div class="skill-list">
+
+                    <div class="skill">
+
+                        <span>Clinical Leadership</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="98"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Healthcare Strategy</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="95"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+
+                        <span>Quality & Compliance</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" data-width="94"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="tech-stack reveal">
+
+            <h3>Technology Stack</h3>
+
+            <div class="badges">
+
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>AWS</span>
+                <span>Azure</span>
+                <span>Terraform</span>
+                <span>Linux</span>
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>CI/CD</span>
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>Node.js</span>
+                <span>React</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+                <span>Data Analytics</span>
+                <span>Healthcare IT</span>
+                <span>FHIR</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+CSS
+/*=========================
+    SKILLS
+==========================*/
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.skill-card{
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.35s;
+
+}
+
+.skill-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.skill-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    background:rgba(79,142,247,.12);
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+}
+
+.skill-card h3{
+
+    margin-bottom:30px;
+
+}
+
+.skill{
+
+    margin-bottom:25px;
+
+}
+
+.skill span{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.progress{
+
+    height:10px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #7C3AED
+    );
+
+    transition:2s ease;
+
+}
+
+.tech-stack{
+
+    margin-top:100px;
+
+    text-align:center;
+
+}
+
+.tech-stack h3{
+
+    margin-bottom:40px;
+
+}
+
+.badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+.badges span{
+
+    padding:14px 22px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.3s;
+
+    cursor:default;
+
+}
+
+.badges span:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+JavaScript
+/*=========================
+    SKILL BARS
+==========================*/
+
+const skillBars = document.querySelectorAll(".progress-bar");
+
+const skillObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            const bar = entry.target;
+
+            const width = bar.dataset.width;
+
+            bar.style.width = width + "%";
+
+            skillObserver.unobserve(bar);
+
+        }
+
+    });
+
+},{threshold:.25});
+
+skillBars.forEach(bar=>{
+
+    skillObserver.observe(bar);
+
+});
+
+
+Projects Section
+This section is designed to look like a premium SaaS portfolio rather than a typical developer portfolio. It includes project filtering, featured project cards, technology stacks, project metrics, and hover interactions.
+<section id="projects" class="projects section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">
+                Portfolio
+            </span>
+
+            <h2>
+                Featured Projects
+            </h2>
+
+            <p>
+                A selection of healthcare, cloud, DevOps, and software
+                engineering projects demonstrating technical expertise
+                and business impact.
+            </p>
+
+        </div>
+
+        <!-- Filter Buttons -->
+
+        <div class="project-filter reveal">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="healthcare">
+                Healthcare
+            </button>
+
+            <button class="filter-btn" data-filter="devops">
+                DevOps
+            </button>
+
+            <button class="filter-btn" data-filter="cloud">
+                Cloud
+            </button>
+
+            <button class="filter-btn" data-filter="software">
+                Software
+            </button>
+
+        </div>
+
+        <!-- Projects -->
+
+        <div class="projects-grid">
+
+            <!-- Project -->
+
+            <article class="project-card reveal"
+                data-category="healthcare">
+
+                <div class="project-image">
+
+                    <img src="images/projects/nivexia.jpg"
+                        alt="Nivexia Healthcare">
+
+                    <span class="featured">
+                        Featured
+                    </span>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Nivexia Integrated Healthcare Platform
+                    </h3>
+
+                    <p>
+
+                        Enterprise healthcare ecosystem connecting
+                        Home Care, Dialysis, Laboratory, Pharmacy,
+                        Telemedicine and Rehabilitation into one
+                        governed platform.
+
+                    </p>
+
+                    <div class="project-stack">
+
+                        <span>Healthcare</span>
+                        <span>Cloud</span>
+                        <span>Architecture</span>
+
+                    </div>
+
+                    <div class="project-metrics">
+
+                        <div>
+
+                            <strong>8</strong>
+
+                            <small>Services</small>
+
+                        </div>
+
+                        <div>
+
+                            <strong>100%</strong>
+
+                            <small>Integrated</small>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Enterprise</strong>
+
+                            <small>Scale</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-links">
+
+                        <a href="#">
+                            Live Demo
+                        </a>
+
+                        <a href="#">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article class="project-card reveal"
+                data-category="devops">
+
+                <div class="project-image">
+
+                    <img src="images/projects/devops.jpg"
+                        alt="DevOps">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+
+                        CI/CD Deployment Pipeline
+
+                    </h3>
+
+                    <p>
+
+                        Automated deployment workflow using Docker,
+                        GitHub Actions and Kubernetes with
+                        Infrastructure as Code.
+
+                    </p>
+
+                    <div class="project-stack">
+
+                        <span>Docker</span>
+
+                        <span>Kubernetes</span>
+
+                        <span>GitHub Actions</span>
+
+                    </div>
+
+                    <div class="project-links">
+
+                        <a href="#">
+                            Live Demo
+                        </a>
+
+                        <a href="#">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article class="project-card reveal"
+                data-category="cloud">
+
+                <div class="project-image">
+
+                    <img src="images/projects/cloud.jpg"
+                        alt="Cloud">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+
+                        AWS Infrastructure
+
+                    </h3>
+
+                    <p>
+
+                        Highly available cloud architecture using
+                        EC2, S3, IAM, VPC, CloudWatch and
+                        Load Balancers.
+
+                    </p>
+
+                    <div class="project-stack">
+
+                        <span>AWS</span>
+
+                        <span>Terraform</span>
+
+                        <span>Linux</span>
+
+                    </div>
+
+                    <div class="project-links">
+
+                        <a href="#">
+                            Live Demo
+                        </a>
+
+                        <a href="#">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article class="project-card reveal"
+                data-category="software">
+
+                <div class="project-image">
+
+                    <img src="images/projects/dashboard.jpg"
+                        alt="Dashboard">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+
+                        Analytics Dashboard
+
+                    </h3>
+
+                    <p>
+
+                        Interactive healthcare analytics dashboard
+                        providing operational insights,
+                        KPIs and visualization.
+
+                    </p>
+
+                    <div class="project-stack">
+
+                        <span>JavaScript</span>
+
+                        <span>Power BI</span>
+
+                        <span>SQL</span>
+
+                    </div>
+
+                    <div class="project-links">
+
+                        <a href="#">
+                            Live Demo
+                        </a>
+
+                        <a href="#">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+CSS
+/*=========================
+    PROJECTS
+==========================*/
+
+.project-filter{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin:50px 0;
+
+}
+
+.filter-btn{
+
+padding:12px 24px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.12);
+
+color:var(--text);
+
+transition:.35s;
+
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+gap:35px;
+
+}
+
+.project-card{
+
+overflow:hidden;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.4s;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.project-image{
+
+position:relative;
+
+overflow:hidden;
+
+height:240px;
+
+}
+
+.project-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.featured{
+
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+padding:8px 15px;
+
+background:var(--primary);
+
+color:#fff;
+
+border-radius:30px;
+
+font-size:.85rem;
+
+}
+
+.project-content{
+
+padding:30px;
+
+}
+
+.project-content h3{
+
+margin-bottom:15px;
+
+}
+
+.project-content p{
+
+line-height:1.8;
+
+color:var(--text-light);
+
+margin-bottom:25px;
+
+}
+
+.project-stack{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-bottom:25px;
+
+}
+
+.project-stack span{
+
+padding:8px 15px;
+
+border-radius:30px;
+
+background:rgba(79,142,247,.15);
+
+font-size:.9rem;
+
+}
+
+.project-metrics{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:30px;
+
+padding:20px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+}
+
+.project-metrics strong{
+
+display:block;
+
+font-size:1.3rem;
+
+color:var(--primary);
+
+}
+
+.project-links{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.project-links a{
+
+flex:1;
+
+padding:14px;
+
+text-align:center;
+
+text-decoration:none;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.12);
+
+color:var(--text);
+
+transition:.3s;
+
+}
+
+.project-links a:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+JavaScript
+/*=========================
+    PROJECT FILTER
+==========================*/
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projects = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+document.querySelector(".filter-btn.active")
+.classList.remove("active");
+
+button.classList.add("active");
+
+const filter = button.dataset.filter;
+
+projects.forEach(project=>{
+
+const category = project.dataset.category;
+
+if(filter==="all" || filter===category){
+
+project.style.display="block";
+
+setTimeout(()=>{
+
+project.style.opacity="1";
+project.style.transform="scale(1)";
+
+},100);
+
+}else{
+
+project.style.opacity="0";
+project.style.transform="scale(.95)";
+
+setTimeout(()=>{
+
+project.style.display="none";
+
+},300);
+
+}
+
+});
+
+});
+
+});
+
+Timeline Section
+This timeline highlights your career progression—from clinical practice to entrepreneurship and your transition into cloud and DevOps. It's designed to show growth, leadership, and continuous learning.
+
+HTML
+<section id="timeline" class="timeline section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">
+                Journey
+            </span>
+
+            <h2>
+                Experience & Milestones
+            </h2>
+
+            <p>
+
+                My career has evolved from clinical healthcare to
+                entrepreneurship, healthcare innovation, and cloud
+                engineering.
+
+            </p>
+
+        </div>
+
+        <div class="timeline-wrapper">
+
+            <!-- Item -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">
+                        2018
+                    </span>
+
+                    <h3>
+                        Registered Nurse
+                    </h3>
+
+                    <h4>
+                        Clinical Practice
+                    </h4>
+
+                    <p>
+
+                        Began my professional journey delivering
+                        patient-centered care while building strong
+                        clinical, leadership, and safety management
+                        skills.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- Item -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">
+                        2021
+                    </span>
+
+                    <h3>
+                        Health, Safety & Environment Professional
+                    </h3>
+
+                    <h4>
+                        Occupational Health
+                    </h4>
+
+                    <p>
+
+                        Expanded into occupational health, workplace
+                        safety, compliance, risk assessment, and
+                        quality improvement initiatives.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- Item -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">
+                        2024
+                    </span>
+
+                    <h3>
+                        Founder & CEO
+                    </h3>
+
+                    <h4>
+                        Nivexia Integrated Healthcare Ltd.
+                    </h4>
+
+                    <p>
+
+                        Founded Nivexia to build an integrated,
+                        technology-driven healthcare ecosystem
+                        connecting Home Care, Dialysis,
+                        Pharmacy, Laboratory, Telemedicine,
+                        and Rehabilitation.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- Item -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">
+                        2025
+                    </span>
+
+                    <h3>
+                        Data Analytics
+                    </h3>
+
+                    <h4>
+                        Healthcare Intelligence
+                    </h4>
+
+                    <p>
+
+                        Started applying analytics and visualization
+                        to healthcare operations, decision-making,
+                        and executive reporting.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- Item -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">
+                        2026
+                    </span>
+
+                    <h3>
+                        DevOps & Cloud Engineering
+                    </h3>
+
+                    <h4>
+                        Career Transition
+                    </h4>
+
+                    <p>
+
+                        Building expertise in Docker,
+                        Kubernetes, Linux, CI/CD,
+                        Terraform, AWS, Azure and
+                        Software Engineering to
+                        create scalable cloud-native
+                        healthcare platforms.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <!-- Achievements -->
+
+        <div class="achievement-grid reveal">
+
+            <div class="achievement-card">
+
+                <div class="achievement-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Recognition
+                </h3>
+
+                <p>
+
+                    Top 10 Finalist —
+                    Aster Guardians Global Nursing Award
+
+                </p>
+
+            </div>
+
+            <div class="achievement-card">
+
+                <div class="achievement-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Education
+                </h3>
+
+                <p>
+
+                    Nursing • HSE • Data Analytics
+                    Cloud & DevOps Engineering
+
+                </p>
+
+            </div>
+
+            <div class="achievement-card">
+
+                <div class="achievement-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Mission
+                </h3>
+
+                <p>
+
+                    Building Africa's leading integrated
+                    healthcare ecosystem powered by
+                    cloud technology.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+CSS
+/*=========================
+    TIMELINE
+==========================*/
+
+.timeline-wrapper{
+
+position:relative;
+
+max-width:900px;
+
+margin:80px auto;
+
+padding-left:40px;
+
+}
+
+.timeline-wrapper::before{
+
+content:"";
+
+position:absolute;
+
+left:15px;
+
+top:0;
+
+width:3px;
+
+height:100%;
+
+background:linear-gradient(
+to bottom,
+var(--primary),
+#7C3AED
+);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+margin-bottom:60px;
+
+}
+
+.timeline-dot{
+
+position:absolute;
+
+left:-34px;
+
+top:25px;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:var(--primary);
+
+border:4px solid var(--background);
+
+box-shadow:0 0 0 6px rgba(79,142,247,.2);
+
+}
+
+.timeline-card{
+
+padding:35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+.timeline-card:hover{
+
+transform:translateX(10px);
+
+}
+
+.timeline-year{
+
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:40px;
+
+background:rgba(79,142,247,.15);
+
+color:var(--primary);
+
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+
+.timeline-card h3{
+
+margin-bottom:8px;
+
+}
+
+.timeline-card h4{
+
+color:var(--primary);
+
+margin-bottom:20px;
+
+font-weight:500;
+
+}
+
+.timeline-card p{
+
+line-height:1.8;
+
+color:var(--text-light);
+
+}
+
+.achievement-grid{
+
+margin-top:100px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.achievement-card{
+
+padding:35px;
+
+text-align:center;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+.achievement-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.achievement-icon{
+
+width:80px;
+
+height:80px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:2rem;
+
+border-radius:20px;
+
+background:rgba(79,142,247,.15);
+
+margin-bottom:20px;
+
+}
+
+.achievement-card p{
+
+line-height:1.7;
+
+color:var(--text-light);
+
+}
+
+@media(max-width:768px){
+
+.timeline-wrapper{
+
+padding-left:25px;
+
+}
+
+.timeline-dot{
+
+left:-20px;
+
+}
+
+.timeline-card{
+
+padding:25px;
+
+}
+
+}
+
+
+
+
+Contact Section
+This section is designed like a premium SaaS landing page. It features a split layout with your contact information on the left and a modern glassmorphism contact form on the right. The form includes client-side validation and is ready to connect to Formspree, EmailJS, or your own backend.
+HTML
+<section id="contact" class="contact section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">
+                Contact
+            </span>
+
+            <h2>
+                Let's Build Something Amazing
+            </h2>
+
+            <p>
+
+                Whether you're hiring, investing, partnering,
+                or simply want to connect, I'd love to hear from you.
+
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <!-- LEFT -->
+
+            <div class="contact-info reveal">
+
+                <div class="info-card">
+
+                    <h3>
+
+                        Let's Connect
+
+                    </h3>
+
+                    <p>
+
+                        I'm currently open to opportunities in
+                        DevOps Engineering, Cloud Engineering,
+                        Software Engineering and Healthcare
+                        Technology leadership.
+
+                    </p>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            📧
+
+                        </div>
+
+                        <div>
+
+                            <h4>Email</h4>
+
+                            <a href="mailto:your@email.com">
+
+                                your@email.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            📍
+
+                        </div>
+
+                        <div>
+
+                            <h4>Location</h4>
+
+                            <span>
+
+                                Port Harcourt, Nigeria
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            💼
+
+                        </div>
+
+                        <div>
+
+                            <h4>Status</h4>
+
+                            <span class="available">
+
+                                ● Available for Opportunities
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="contact-form reveal">
+
+                <form id="contactForm">
+
+                    <div class="input-group">
+
+                        <label for="name">
+
+                            Full Name
+
+                        </label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="email">
+
+                            Email Address
+
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="subject">
+
+                            Subject
+
+                        </label>
+
+                        <input
+                            id="subject"
+                            type="text"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="message">
+
+                            Message
+
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="6"
+                            required></textarea>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Send Message
+
+                    </button>
+
+                    <p id="formMessage"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+CSS
+/*=========================
+    CONTACT
+==========================*/
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1.2fr;
+
+gap:50px;
+
+align-items:start;
+
+margin-top:70px;
+
+}
+
+.info-card,
+.contact-form{
+
+padding:40px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.info-card h3{
+
+margin-bottom:20px;
+
+}
+
+.info-card p{
+
+line-height:1.8;
+
+color:var(--text-light);
+
+margin-bottom:35px;
+
+}
+
+.contact-item{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:25px;
+
+}
+
+.contact-icon{
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:1.3rem;
+
+border-radius:16px;
+
+background:rgba(79,142,247,.15);
+
+}
+
+.contact-item h4{
+
+margin-bottom:4px;
+
+}
+
+.contact-item a{
+
+text-decoration:none;
+
+color:var(--primary);
+
+}
+
+.available{
+
+color:#32d583;
+
+font-weight:600;
+
+}
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:35px;
+
+}
+
+.social-icons a{
+
+width:48px;
+
+height:48px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+color:var(--text);
+
+transition:.3s;
+
+text-decoration:none;
+
+}
+
+.social-icons a:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+transform:translateY(-6px);
+
+}
+
+.input-group{
+
+display:flex;
+
+flex-direction:column;
+
+margin-bottom:25px;
+
+}
+
+.input-group label{
+
+margin-bottom:10px;
+
+font-weight:600;
+
+}
+
+.input-group input,
+.input-group textarea{
+
+padding:16px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.12);
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(10px);
+
+color:var(--text);
+
+font-size:1rem;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 0 3px rgba(79,142,247,.2);
+
+}
+
+textarea{
+
+resize:vertical;
+
+min-height:180px;
+
+}
+
+#formMessage{
+
+margin-top:20px;
+
+font-weight:600;
+
+}
+
+@media(max-width:900px){
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+JavaScript
+/*=========================
+    CONTACT FORM
+==========================*/
+
+const form = document.getElementById("contactForm");
+const message = document.getElementById("formMessage");
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const name = document.getElementById("name").value.trim();
+const email = document.getElementById("email").value.trim();
+const subject = document.getElementById("subject").value.trim();
+const body = document.getElementById("message").value.trim();
+
+if(!name || !email || !subject || !body){
+
+message.textContent="Please complete all fields.";
+message.style.color="#ff6b6b";
+
+return;
+
+}
+
+const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!emailRegex.test(email)){
+
+message.textContent="Please enter a valid email address.";
+message.style.color="#ff6b6b";
+
+return;
+
+}
+
+message.textContent="Thank you! Your message is ready to send.";
+message.style.color="#32d583";
+
+/*
+Connect here to:
+
+• Formspree
+• EmailJS
+• Netlify Forms
+• Firebase
+• Supabase
+• Custom API
+
+*/
+
+form.reset();
+
+});
+
+
+Footer Section
+This footer completes the portfolio with a polished, professional finish. It includes your brand identity, quick navigation, social links, a back-to-top button, and a dynamic copyright year.
+
+HTML
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <a href="#home" class="footer-logo">
+
+                    &lt;Regius/&gt;
+
+                </a>
+
+                <p>
+
+                    Founder • Cloud Engineer • DevOps Engineer •
+                    Software Engineer • Healthcare Entrepreneur
+
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#skills">Skills</a></li>
+
+                    <li><a href="#projects">Projects</a></li>
+
+                    <li><a href="#timeline">Timeline</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div class="footer-contact">
+
+                <h3>Get In Touch</h3>
+
+                <p>Port Harcourt, Rivers State, Nigeria</p>
+
+                <p>your@email.com</p>
+
+                <p>Available for Remote Opportunities</p>
+
+            </div>
+
+            <!-- Social -->
+
+            <div class="footer-social">
+
+                <h3>Follow Me</h3>
+
+                <div class="social-icons">
+
+                    <a href="#" aria-label="GitHub">
+
+                        <i class="fab fa-github"></i>
+
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+
+                        <i class="fab fa-linkedin"></i>
+
+                    </a>
+
+                    <a href="#" aria-label="X">
+
+                        <i class="fab fa-x-twitter"></i>
+
+                    </a>
+
+                    <a href="#" aria-label="Email">
+
+                        <i class="fas fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © <span id="year"></span>
+                Regius Goodlive.
+                All Rights Reserved.
+
+            </p>
+
+            <a href="#home"
+               class="back-to-top"
+               aria-label="Back to Top">
+
+                ↑
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+CSS
+/*=========================
+    FOOTER
+==========================*/
+
+.footer{
+
+padding:80px 0 30px;
+
+margin-top:120px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(20px);
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:50px;
+
+margin-bottom:60px;
+
+}
+
+.footer-logo{
+
+font-size:2rem;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:var(--primary);
+
+}
+
+.footer-brand p{
+
+margin-top:20px;
+
+line-height:1.8;
+
+color:var(--text-light);
+
+}
+
+.footer h3{
+
+margin-bottom:20px;
+
+}
+
+.footer-links ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.footer-links li{
+
+margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+text-decoration:none;
+
+color:var(--text-light);
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:var(--primary);
+
+padding-left:8px;
+
+}
+
+.footer-contact p{
+
+margin-bottom:15px;
+
+color:var(--text-light);
+
+line-height:1.7;
+
+}
+
+.footer-social .social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:15px;
+
+}
+
+.footer-social a{
+
+width:48px;
+
+height:48px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+text-decoration:none;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+color:var(--text);
+
+transition:.35s;
+
+}
+
+.footer-social a:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+transform:translateY(-6px);
+
+}
+
+.footer-bottom{
+
+padding-top:35px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+}
+
+.footer-bottom p{
+
+color:var(--text-light);
+
+}
+
+.back-to-top{
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+text-decoration:none;
+
+font-size:1.4rem;
+
+background:var(--primary);
+
+color:#fff;
+
+transition:.35s;
+
+box-shadow:0 10px 25px rgba(79,142,247,.35);
+
+}
+
+.back-to-top:hover{
+
+transform:translateY(-8px);
+
+}
+
+@media(max-width:768px){
+
+.footer-bottom{
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+}
+
+
+JavaScript
+/*=========================
+    FOOTER
+==========================*/
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+/*=========================
+    SMOOTH SCROLL
+==========================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href"))
+
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Final Improvements I'd Add
+To elevate this portfolio to a level comparable with top engineering portfolios, consider adding:
+1. Custom Cursor
+Interactive cursor with hover effects
+Magnetic buttons
+2. Loading Screen
+Animated logo
+Progress indicator
+Smooth page transition
+3. Animated Background
+Moving particles
+Gradient mesh
+Aurora lighting effect
+4. Dark/Light Theme
+Persist theme using localStorage
+Smooth transitions between modes
+5. Project Details Modal
+Click a project card to view:
+oScreenshots
+oArchitecture diagrams
+oTech stack
+oChallenges
+oOutcomes
+6. GitHub Integration
+Fetch repositories dynamically with the GitHub API
+Display stars, forks, and latest commits
+7. Certifications Carousel
+AWS
+Azure
+Docker
+Kubernetes
+Terraform
+Nursing
+HSE
+Data Analytics
+8. Resume Download
+Download button with PDF preview
+ATS-friendly resume
+9. Blog Section
+Share articles on:
+DevOps
+Cloud Engineering
+Healthcare Technology
+Leadership
+System Design
+10. Performance Optimizations
+Lazy-load images
+Responsive image sizes
+Minified CSS and JavaScript
+Preloaded fonts
+Optimized Lighthouse scores (95+)
+WCAG 2.2 AA accessibility
+SEO metadata and Open Graph tags
+JSON-LD structured data
+
